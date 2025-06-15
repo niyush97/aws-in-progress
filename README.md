@@ -9,7 +9,7 @@ A simple and automated way to deploy static website content to Amazon S3 and Clo
 
 ## Overall Flow Architecture 
 
-[Image](https://www.notion.so/Content-Delivery-With-CloudFront-204ce17158148092823df5b1554bf87c?source=copy_link#205ce1715814806ab098ffc6d04d6678)
+![Image](https://github.com/niyush97/content-deploy-with-CloudFront/blob/main/image.png)
 
 
 
