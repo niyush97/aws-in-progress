@@ -42,6 +42,6 @@ A simple and automated way to deploy static website content to Amazon S3 and Clo
 
 # Step By step Guide here 
 
-[Click here](https://www.notion.so/Content-Delivery-With-CloudFront-204ce17158148092823df5b1554bf87c?source=copy_link)
+[Click here](https://zenith-epoxy-275.notion.site/Content-Delivery-With-CloudFront-204ce17158148092823df5b1554bf87c?source=copy_link)
 
 
