@@ -9,7 +9,7 @@ A simple and automated way to deploy static website content to Amazon S3 and Clo
 
 ## Overall Flow Architecture 
 
-![Image](https://github.com/niyush97/content-deploy-with-CloudFront/blob/main/image.png)
+![Image](https://github.com/niyush97/aws-in-progress/content-deploy-with-CloudFront/blob/main/image.png)
 
 
 
