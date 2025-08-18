@@ -56,18 +56,22 @@ npm start
 
 ### Project Structure
 ```text
-├── src/
+├── express-docker-ebs/
+│   ├── Controllers /
+│   │   └── postControllers.js  # Mangaing the post requests
 │   ├── routes/
 │   │   └── posts-GPUD.js       # Posts routes
 │   ├── middleware/
 │   │   ├── logger.js           # Custom logging middleware
 │   │   ├── notFound.js         # 404 error handler
 │   │   └── errorHandler.js     # Global error handler
-│   └── static files...         # Static assets
-├── .env                        # Environment variables
+│   └── src /                   # Static assets
+│   │   ├── index.html  
+│   │   ├── script.js                 
+│   │   └── style.css
 ├── .gitignore                  # Git ignore file
 ├── package.json                # Node.js dependencies
+├── .package-lock.json          # Optional (to install exact version)
 ├── Dockerfile                  # Docker configuration
-├── .dockerignore               # Docker ignore file
 └── README.md                   # This file
 ```
