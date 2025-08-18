@@ -1,0 +1,59 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2rem;
+}
+input[type="text"]{
+    width: 180px;
+    height: 10px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px ;
+    outline: none;
+    margin-top: 4px;
+}
+input[type="text"]:focus{
+    border: 2px solid #007bff;
+    transition: all 0.3s ease-in-out;
+}
+
+select {
+    width: 200px;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+}
+select:focus {
+    border: 2px solid #007bff;
+    transition: all 0.3s ease-in-out;
+}
+label{
+
+    margin-left: 5px;
+    margin-bottom: 9px;
+
+}
+button{
+    width: 100px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 6px;
+}
+button:hover{
+    background-color: #0056b3;
+    transition: all 0.3s ease-in-out;
+}
+button#get-posts{
+ background-color: #1d997a;
+}
+button#get-posts:hover{
+ background-color: #048262;
+ transition: all 0.3s ease-in-out;
+}

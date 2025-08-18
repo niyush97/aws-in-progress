@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Simple app using Express js</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Hello from node and express js</h1>
+    <form id="add-post"> Create a new post
+        <br><br>
+
+        <label for="first_name">First name</label><br>
+        <input type="text" id="first_name" name="first_name" placeholder="Enter first name here" required> <br><br>
+        <label for="last_name">Last name</label><br>
+        <input type="text" id="last_name" name="last_name" placeholder="Enter last name here" required> <br><br>
+        <label for="email">Email</label><br>
+        <input type="text" id="email" name="email" placeholder="Enter email here" required>  
+        <br><br>
+        <label for="gender">Gender</label>
+        <br>
+        <select name="gender" id="gender">
+            <option value="" disabled selected>Select your Gender</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+            <option value="other">other</option>
+        </select>
+        <br><br>
+        <label for="country">country</label><br>
+        <input type="text" id="country" name="country" placeholder="Enter country here" required> <br>
+        <br>
+        <label for="job_title">Job Title</label><br>
+<input type="text" id="job_title" name="job_title" placeholder="Enter job title here" required>
+<br><br>
+        <button type="submit">Add post</button>
+    </form>
+    <br>
+    <br>
+    <button id="get-posts">Get Posts</button>
+
+    
+    <div id="output"></div>
+    <script src="./script.js"></script>
+</body>
+</html>
