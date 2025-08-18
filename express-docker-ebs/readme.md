@@ -55,6 +55,7 @@ npm start
 - DELETE /api/posts/:id - Delete a specific post
 
 ### Project Structure
+```text
 ├── src/
 │   ├── routes/
 │   │   └── posts-GPUD.js       # Posts routes
@@ -69,3 +70,4 @@ npm start
 ├── Dockerfile                  # Docker configuration
 ├── .dockerignore               # Docker ignore file
 └── README.md                   # This file
+```
