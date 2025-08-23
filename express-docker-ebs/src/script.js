@@ -1,14 +1,14 @@
 const form = document.querySelector("#add-post");
 const output = document.querySelector('#output');
 const button = document.querySelector('#get-posts');
-// for local + production use should work
+// for local + production use
 const API_BASE = window.location.origin;
 
 
 //>
 async function getPosts() {
     try {
-        const response = await fetch('http://localhost:8000/api/posts');
+        const response = await fetch(`${API_BASE}api/posts'`);
         if (!response.ok) {
             throw new Error('Failed to fetch posts');
         }
