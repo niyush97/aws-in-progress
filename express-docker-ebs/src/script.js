@@ -1,6 +1,8 @@
 const form = document.querySelector("#add-post");
 const output = document.querySelector('#output');
 const button = document.querySelector('#get-posts');
+// for local + production use
+const API_BASE = window.location.origin;
 
 
 //>
@@ -34,7 +36,7 @@ async function addPost(e) {
     const postData = Object.fromEntries(formData.entries());
 
     try {
-        const response = await fetch('http://localhost:8000/api/posts', {
+        const response = await fetch(`${API_BASE}api/posts'`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

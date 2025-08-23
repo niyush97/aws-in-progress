@@ -5,6 +5,7 @@ import {posts} from './routes/posts-GPUD.js'
 import logger  from './middleware/logger.js';
 import  notFound  from './middleware/notFound.js';
 import  errorHandler  from './middleware/errorHandler.js';
+import cors from 'cors';
 const app = express();
 const PORT = process.env.PORT   || 8080;
 
@@ -21,6 +22,8 @@ app.use('/api/posts', posts);
 
 // > Logger middleware
 app.use(logger);
+
+app.use(cors());
 
 // > Error handler
 app.use(notFound);
