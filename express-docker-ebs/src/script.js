@@ -1,7 +1,7 @@
 const form = document.querySelector("#add-post");
 const output = document.querySelector('#output');
 const button = document.querySelector('#get-posts');
-// for local + production use
+// for local + production use should work
 const API_BASE = window.location.origin;
 
 
