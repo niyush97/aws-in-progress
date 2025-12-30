@@ -2,9 +2,10 @@ import {DynamoDBClient} from "@aws-sdk/client-dynamodb";
 import {
     DynamoDBDocumentClient,
     PutCommand,
-    GetCommand,
+    GetCommand, 
     ScanCommand,
-    DeleteCommand,} from "@aws-sdk/lib-dynamodb";
+    DeleteCommand,
+} from "@aws-sdk/lib-dynamodb";
 
     const client  = new DynamoDBClient({});
     const dynamo = DynamoDBDocumentClient.from(client);
