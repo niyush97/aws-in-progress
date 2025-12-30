@@ -7,7 +7,7 @@ import {
     DeleteCommand,} from "@aws-sdk/lib-dynamodb";
 
     const client  = new DynamoDBClient({});
-    const dynamo = DynamoDBClient.from(client);
+    const dynamo = DynamoDBDocumentClient.from(client);
     const tableName = "customers";
 
     export const handler = async (event, context) => {
