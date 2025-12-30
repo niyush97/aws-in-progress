@@ -36,7 +36,7 @@ import {
                     body = `Customer ${requestJSON.customer_id} created successfully`;
                     break;
 
-                //=> READ ALL i.e. GET /customers.
+            //=> READ ALL i.e. GET /customers.
                     case "GET /customers":
                         body = await dynamo.send(
                             new ScanCommand ({TableName : tableName})
@@ -56,7 +56,7 @@ import {
                             );
                             body = body.Item;
                             break;
-                    //=> UPDATE : PUT /customers/{id}
+                //=> UPDATE : PUT /customers/{id}
                             case "PUT /customers/{id}" :
                                 let updateJSON = JSON.parse(event.body);
                                 await dynamo.send(
@@ -73,8 +73,31 @@ import {
                                 );
                                 body = `Customer ${event.pathParameters.id} updated successfully`;
                                 break;
+                //=> DELETE : DELETE /customers/{id}
+                                case "DELETE /customers/{id}" :
+                                    await dynamo.send(
+                                        new DeleteCommand ({
+                                            TableName : tableName,
+                                            key : {
+                                                customer_id : parseInt(event.pathParameters.id),
+                                            },
+                                        })
+                                    );
+                                    body = `Customer ${event.pathParameters.id} deleted successfully.`
+                                    break;
+                                    default :
+                                     throw new Error (`Unsupported route : ${event.routeKey}`);
             }
         } catch (err) {
-            
+                statusCode = 400;
+                body = err.message;
         }
-    }
+        finally{
+            body = JSON.stringify(body);
+        }
+        return {
+            statusCode,
+            body,
+            headers,
+        };
+    };
