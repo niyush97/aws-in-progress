@@ -3,21 +3,21 @@
 #===================
 
 resource "aws_s3_bucket" "mySuperBucketForInput" {
-  bucket = var.s3InputBucket
+  bucket        = var.mySuperBucketForInput
   force_destroy = true
 }
 
 #===================
-#? Block public access for input bucket
+#! Block public access for input bucket
 #===================
 
 resource "aws_s3_bucket_public_access_block" "inputbucketBlockAccess" {
-    bucket = aws_s3_bucket.mySuperBucketForInput.id
+  bucket = aws_s3_bucket.mySuperBucketForInput.id
 
-    block_public_acls = true
-    block_public_policy = true
-    ignore_public_acls = true
-    restrict_public_buckets = true
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 }
 
 #===================
@@ -25,20 +25,20 @@ resource "aws_s3_bucket_public_access_block" "inputbucketBlockAccess" {
 #===================
 
 resource "aws_s3_bucket" "mySuperBucketForOutput" {
-  bucket = var.s3OutputBucket
+  bucket        = var.mySuperBucketForOutput
   force_destroy = true
 }
 
 #===================
-#? Block public access for output bucket
+#! Block public access for output bucket
 #===================
 
 resource "aws_s3_bucket_public_access_block" "outputBucketBlockAccess" {
   bucket = aws_s3_bucket.mySuperBucketForOutput.id
 
-  block_public_acls = true
-  block_public_policy = true
-  ignore_public_acls = true
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
   restrict_public_buckets = true
 }
 
@@ -49,9 +49,10 @@ resource "aws_s3_bucket_public_access_block" "outputBucketBlockAccess" {
 resource "aws_s3_object" "SampleAudioFile" {
   bucket = aws_s3_bucket.mySuperBucketForInput.id
 
-  key = "1-min-clip.mp4"
+  key    = "1-min-clip.mp4"
   source = "${path.module}./Audio/1-min-clip.mp4"
 }
 
+# rest for aws transcribe through console
 
 
