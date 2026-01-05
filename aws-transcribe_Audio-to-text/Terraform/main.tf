@@ -12,7 +12,7 @@ resource "aws_s3_bucket" "mySuperBucketForInput" {
 #===================
 
 resource "aws_s3_bucket_public_access_block" "inputbucketBlockAccess" {
-    bucket = aws_s3_bucket.mySuperBucketForInput
+    bucket = aws_s3_bucket.mySuperBucketForInput.id
 
     block_public_acls = true
     block_public_policy = true
@@ -34,7 +34,7 @@ resource "aws_s3_bucket" "mySuperBucketForOutput" {
 #===================
 
 resource "aws_s3_bucket_public_access_block" "outputBucketBlockAccess" {
-  bucket = aws_s3_bucket.mySuperBucketForOutput
+  bucket = aws_s3_bucket.mySuperBucketForOutput.id
 
   block_public_acls = true
   block_public_policy = true
@@ -42,6 +42,16 @@ resource "aws_s3_bucket_public_access_block" "outputBucketBlockAccess" {
   restrict_public_buckets = true
 }
 
+#===================
+#? Uploading files to s3InputBucket / mySuperBucketForInput
+#===================
+
+resource "aws_s3_object" "SampleAudioFile" {
+  bucket = aws_s3_bucket.mySuperBucketForInput.id
+
+  key = "1-min-clip.mp4"
+  source = "${path.module}./Audio/1-min-clip.mp4"
+}
 
 
 
