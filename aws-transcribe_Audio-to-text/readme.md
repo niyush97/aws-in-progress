@@ -21,7 +21,7 @@ in this project the s3 bucket life-cycle will be automated using Terrafrom
 ```HCL
 terraform init
 terraform plan
-terraform -apply
+terraform apply
 ```
 ---
 
