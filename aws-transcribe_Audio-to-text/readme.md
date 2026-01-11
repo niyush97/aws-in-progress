@@ -47,7 +47,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
  ### Author
-Created by Niyush Bjr
+
+Created by Niyush Bjr <br>
+
+
 ☕ [Buy Me a Coffee](http://buymeacoffee.com/niyushbjr1L)
 
 ---
