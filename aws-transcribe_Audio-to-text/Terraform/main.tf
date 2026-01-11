@@ -53,6 +53,13 @@ resource "aws_s3_object" "SampleAudioFile" {
   source = "${path.module}./Audio/1-min-clip.mp4"
 }
 
+# ? uploading a vocabulary filter
+resource "aws_s3_object" "vocabfilterFile" {
+  bucket = aws_s3_bucket.mySuperBucketForInput.id
+
+  key = "vocabFilterFile.txt"
+  source = "${path.module}/../vocabFilter.txt"
+}
 # rest for aws transcribe through console
 
 
