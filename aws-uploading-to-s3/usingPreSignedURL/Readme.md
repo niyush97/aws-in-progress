@@ -284,7 +284,7 @@ Since you're using REST API, you have access to these additional features:
 
 ---
 
-## **Step 6: Client-Side Implementation**
+## **Step 5: Client-Side Implementation**
 
 ##### **Optional If you prefer Testing it via front-end:**
 
@@ -293,9 +293,9 @@ use the  `index.html` file: or `React_Version.js`
 
 ---
 
-## **Step 7: Testing With Postman**
+## **Step 6: Testing With Postman**
 
-### Step 7.1: Get Pre-signed URL (JSON request, NO file)
+### Step 6.1: Get Pre-signed URL (JSON request, NO file)
 - Click New → HTTP Request
 - Configure:
 - Method: `POST`
@@ -326,7 +326,7 @@ Response:
 ```
 ---
 
-### Step 7.2: Upload File to S3 (Using the pre-signed URL)
+### Step 6.2: Upload File to S3 (Using the pre-signed URL)
 - Click New → HTTP Request
 - Configure:
 - Method: `PUT`
@@ -350,7 +350,7 @@ Body: (empty)
 ```
 ---
 
-## **Step 8: Confirm the Upload of the file in S3 Bucket**
+## **Step 7: Confirm the Upload of the file in S3 Bucket**
 
 > Head  over to S3 and confirm that the file has been uploaded successfully.
 
@@ -404,7 +404,7 @@ Actions → Deploy API → Select stage → Deploy
 
 ---
 
-## Step 9 : Delete Resources at the end.
+## Step 8 : Delete Resources at the end.
 
 To avoid unnecessary charges $ make sure to delete resources at the end.
 
@@ -428,6 +428,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👤 Author
 Created by Niyush Bjr
+<br>
 [☕ Buy Me a Coffee](http://buymeacoffee.com/niyushbjr1L)
 
 ---
