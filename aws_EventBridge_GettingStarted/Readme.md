@@ -186,10 +186,9 @@ AWS Step Functions excel in complex workflow orchestration scenarios, offering a
 `Creating the lambda function`
 <br>
 
+    ![image.png](./images/image.png)
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image.png)
-    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%201.png)
+    ![image.png]ß(./images/image%201.png)
     
 <br>
 
@@ -197,15 +196,15 @@ AWS Step Functions excel in complex workflow orchestration scenarios, offering a
 `Creating EventBridge Rule`
 <br>
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%202.png)
+    ![image.png](./images/image%202.png)
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%203.png)
+    ![image.png](./images/image%203.png)
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%204.png)
+    ![image.png](./images/image%204.png)
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%205.png)
+    ![image.png](./images/image%205.png)
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%206.png)
+    ![image.png](./images/image%206.png)
     
 <br>
 
@@ -214,9 +213,9 @@ AWS Step Functions excel in complex workflow orchestration scenarios, offering a
     <br>
 
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%207.png)
+    ![image.png](./images/image%207.png)
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%208.png)
+    ![image.png](./images/image%208.png)
     
 
 ---
@@ -294,7 +293,7 @@ AWS Step Functions excel in complex workflow orchestration scenarios, offering a
   <br>
   
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%209.png)
+    ![image.png](./images/image%209.png)
     
 <br>
 
@@ -303,7 +302,7 @@ AWS Step Functions excel in complex workflow orchestration scenarios, offering a
 <br>
     
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2010.png)
+    ![image.png](./images/image%2010.png)
     
 <br>
 
@@ -312,7 +311,7 @@ AWS Step Functions excel in complex workflow orchestration scenarios, offering a
  <br>
    
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2011.png)
+    ![image.png](./images/image%2011.png)
     
 <br>
 
@@ -320,9 +319,9 @@ AWS Step Functions excel in complex workflow orchestration scenarios, offering a
 `Event pattern (custom/manual)`
 <br>
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2012.png)
+    ![image.png](./images/image%2012.png)
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2013.png)
+    ![image.png](./images/image%2013.png)
     
 <br>
 
@@ -330,9 +329,9 @@ AWS Step Functions excel in complex workflow orchestration scenarios, offering a
 `Test event publish`
     <br>
 
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2014.png)
+    ![image.png](./images/image%2014.png)
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2015.png)
+    ![image.png](./images/image%2015.png)
     
 <br>
 
@@ -340,9 +339,9 @@ AWS Step Functions excel in complex workflow orchestration scenarios, offering a
 `Verify the event in SQS`
   <br>
   
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2016.png)
+    ![image.png](./images/image%2016.png)
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2017.png)
+    ![image.png](./images/image%2017.png)
     
 
 ---
@@ -399,19 +398,19 @@ Automatically filter and route DynamoDB item changes to SQS.
 `Creating DynamoDB Table`
 <br>
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2018.png)
+    ![image.png](./images/image%2018.png)
   <br>
   
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2019.png)
+    ![image.png](./images/image%2019.png)
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2020.png)
+    ![image.png](./images/image%2020.png)
     
 
 - Image : 
 `Create a Queue`
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2021.png)
+    ![image.png](./images/image%2021.png)
     
 <br>
 
@@ -419,16 +418,16 @@ Automatically filter and route DynamoDB item changes to SQS.
 `Create a pipe`
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2022.png)
+    ![image.png](./images/image%2022.png)
 <br>
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2023.png)
+    ![image.png](./images/image%2023.png)
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2024.png)
+    ![image.png](./images/image%2024.png)
 <br>
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2025.png)
+    ![image.png](./images/image%2025.png)
     
 <br>
 
@@ -436,19 +435,19 @@ Automatically filter and route DynamoDB item changes to SQS.
 `TEST the pipe`
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2026.png)
+    ![image.png](./images/image%2026.png)
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2027.png)
+    ![image.png](./images/image%2027.png)
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2028.png)
+    ![image.png](./images/image%2028.png)
     
     Check the Event created
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2029.png)
+    ![image.png](./images/image%2029.png)
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2030.png)
+    ![image.png](./images/image%2030.png)
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2031.png)
+    ![image.png](./images/image%2031.png)
     
 
 ---
@@ -471,25 +470,25 @@ Automatically filter and route DynamoDB item changes to SQS.
 **`EventBridge Scheduler`**
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2032.png)
+    ![image.png](./images/image%2032.png)
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2033.png)
+    ![image.png](./images/image%2033.png)
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2034.png)
+    ![image.png](./images/image%2034.png)
 <br>
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2035.png)
+    ![image.png](./images/image%2035.png)
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2036.png)
+    ![image.png](./images/image%2036.png)
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2037.png)
+    ![image.png](./images/image%2037.png)
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2038.png)
+    ![image.png](./images/image%2038.png)
     
 <br>
 
@@ -497,13 +496,13 @@ Automatically filter and route DynamoDB item changes to SQS.
 `Confirm the scheduler logs`
 <br>
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2039.png)
+    ![image.png](./images/image%2039.png)
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2040.png)
+    ![image.png](./images/image%2040.png)
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2041.png)
+    ![image.png](./images/image%2041.png)
     
 
 ---
@@ -639,14 +638,14 @@ These are the patterns AWS tests you on:
 `Delete :  EventBridge Scheduler `
 <br>
 
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2042.png)
+    ![image.png](./images/image%2042.png)
     
 --- 
 
 - Image :
 `Delete : **EventBridge Pipes**`
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2043.png)
+    ![image.png](./images/image%2043.png)
     
 ---
 
@@ -654,10 +653,10 @@ These are the patterns AWS tests you on:
 `Delete : **EventBridge Rules**`
 <br>
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2044.png)
+    ![image.png](./images/image%2044.png)
 <br>
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2045.png)
+    ![image.png](./images/image%2045.png)
     
 
 ---
@@ -666,7 +665,7 @@ These are the patterns AWS tests you on:
 `Delete : **Custom Event Bus**`
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2046.png)
+    ![image.png](./images/image%2046.png)
     
 
 ---
@@ -674,7 +673,7 @@ These are the patterns AWS tests you on:
 `Delete : **Lambda Functions**`
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2047.png)
+    ![image.png](./images/image%2047.png)
  <br>
    
 
@@ -684,9 +683,9 @@ These are the patterns AWS tests you on:
 `Delete : SQS Queues`
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2048.png)
+    ![image.png](./images/image%2048.png)
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2049.png)
+    ![image.png](./images/image%2049.png)
     
 
 ---
@@ -695,7 +694,7 @@ These are the patterns AWS tests you on:
 `Delete : log groups`
   <br>  
     
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2050.png)
+    ![image.png](./images/image%2050.png)
     
 
 ---
@@ -704,7 +703,7 @@ These are the patterns AWS tests you on:
 `Delete : DynamoDB Table`
  <br>
    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2051.png)
+    ![image.png](./images/image%2051.png)
     
 
 ---
