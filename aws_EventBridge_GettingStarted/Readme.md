@@ -1,12 +1,12 @@
 # Getting Started with EventBridge
 
-Created by: Niyush Bjr
-Created time: 23 June 2026 22:23
 level: `Beginner`
 >`Description: `full hands-on tutorial for AWS EventBridge — from zero to intermediate, with real-world scenarios, SAA-C03 relevance and cleanup steps.
 
 AWS Services : DynamoDB, EC2, EventBridge, Lambda, SQS
+
 Other tools: `#N/A`
+
 Category: `Serverless`
 
 
@@ -287,47 +287,59 @@ AWS Step Functions excel in complex workflow orchestration scenarios, offering a
 > Verify the event
 > 
 - SQS → order-events-queue → Send and receive messages → Poll for messages
+<br>
 
 - Image :
 `Create custom event bus`
-    
+  <br>
+  
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%209.png)
     
+<br>
 
 - Image :
 `Create SQS Queue as Target`
+<br>
     
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2010.png)
     
+<br>
 
 - Image :
 **Create a Rule on the Custom Bus**
-    
+ <br>
+   
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2011.png)
     
+<br>
 
 - Image : 
 `Event pattern (custom/manual)`
+<br>
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2012.png)
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2013.png)
     
+<br>
 
 - Image : 
 `Test event publish`
-    
+    <br>
+
     ![image.png](Getting%20Started%20with%20EventBridge/image%2014.png)
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2015.png)
     
+<br>
 
 - Image : 
 `Verify the event in SQS`
-    
+  <br>
+  
     ![image.png](Getting%20Started%20with%20EventBridge/image%2016.png)
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2017.png)
@@ -337,12 +349,9 @@ AWS Step Functions excel in complex workflow orchestration scenarios, offering a
 
 ### Step 4.3 **EventBridge Pipes (DynamoDB Streams → SQS)**
 
-<aside>
-<img src="https://app.notion.com/icons/info-alternate_blue.svg" alt="https://app.notion.com/icons/info-alternate_blue.svg" width="40px" />
-
 Automatically filter and route DynamoDB item changes to SQS.
 
-</aside>
+
 
 > **Create a DynamoDB Table**
 > 
@@ -384,14 +393,18 @@ Automatically filter and route DynamoDB item changes to SQS.
 - Go to DynamoDB → `Orders` → **Create item**
 - Add: `orderId = "001"`, `status = "NEW"`, `amount = "5000"`
 - Check SQS queue → poll for messages → you'll see the DynamoDB stream record
+<br>
 
 - Image :
 `Creating DynamoDB Table`
+<br>
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2018.png)
-    
+  <br>
+  
     ![image.png](Getting%20Started%20with%20EventBridge/image%2019.png)
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2020.png)
     
 
@@ -400,22 +413,29 @@ Automatically filter and route DynamoDB item changes to SQS.
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2021.png)
     
+<br>
 
 - Image :
 `Create a pipe`
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2022.png)
+<br>
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2023.png)
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2024.png)
+<br>
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2025.png)
     
+<br>
 
 - Image : 
 `TEST the pipe`
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2026.png)
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2027.png)
@@ -445,32 +465,44 @@ Automatically filter and route DynamoDB item changes to SQS.
 - Target: **Lambda** → `daily-report-lambda`
 - Action after schedule completion: **DELETE**
 - **Create schedule**
+<br>
 
 - Image :
 **`EventBridge Scheduler`**
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2032.png)
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2033.png)
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2034.png)
+<br>
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2035.png)
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2036.png)
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2037.png)
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2038.png)
     
+<br>
 
 - Image : 
 `Confirm the scheduler logs`
+<br>
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2039.png)
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2040.png)
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2041.png)
     
 
@@ -605,44 +637,53 @@ These are the patterns AWS tests you on:
 
 - Image :
 `Delete :  EventBridge Scheduler `
+<br>
 
-    
     ![image.png](Getting%20Started%20with%20EventBridge/image%2042.png)
     
+--- 
 
 - Image :
 `Delete : **EventBridge Pipes**`
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2043.png)
     
+---
 
 - Image :
 `Delete : **EventBridge Rules**`
+<br>
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2044.png)
+<br>
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2045.png)
-    
-
-- Image :
-`Delete : **Custom Event Bus**`
-    
-    ![image.png](Getting%20Started%20with%20EventBridge/image%2046.png)
     
 
 ---
 
 - Image :
+`Delete : **Custom Event Bus**`
+ <br>
+   
+    ![image.png](Getting%20Started%20with%20EventBridge/image%2046.png)
+    
+
+---
+- Image :
 `Delete : **Lambda Functions**`
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2047.png)
-    
+ <br>
+   
 
 ---
 
 - Image :
 `Delete : SQS Queues`
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2048.png)
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2049.png)
@@ -652,7 +693,7 @@ These are the patterns AWS tests you on:
 
 - Image :
 `Delete : log groups`
-    
+  <br>  
     
     ![image.png](Getting%20Started%20with%20EventBridge/image%2050.png)
     
@@ -661,14 +702,15 @@ These are the patterns AWS tests you on:
 
 - Image :
 `Delete : DynamoDB Table`
-    
+ <br>
+   
     ![image.png](Getting%20Started%20with%20EventBridge/image%2051.png)
     
 
 ---
 
 <aside>
-<img src="https://app.notion.com/icons/confetti-party-popper_blue.svg" alt="https://app.notion.com/icons/confetti-party-popper_blue.svg" width="40px" />
+<img src="https://app.notion.com/icons/confetti-party-popper_blue.svg" alt="https://app.notion.com/icons/confetti-party-popper_blue.svg" width="40px" /> 
 
 And that’s a wrap!!!!!!! for the console version.
 
