@@ -147,8 +147,7 @@ B) Keep REST APIs but enable API Gateway Caching for the Lambda Authorizer with 
 C) Migrate to Amazon CloudFront and use Lambda@Edge to validate the Cognito JWTs.
 D) Switch to API Gateway HTTP APIs and use an IAM Authorizer with Cognito Identity Pools.
 
-- Answer
-    
+> - Answer
     *Correct Answer: A. Explanation: HTTP APIs are significantly cheaper than REST APIs and support native JWT authorizers, eliminating the need for (and cost of) a custom Lambda Authorizer.*
 
 
