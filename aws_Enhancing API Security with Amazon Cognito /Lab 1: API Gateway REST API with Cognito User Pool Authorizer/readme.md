@@ -235,3 +235,7 @@ curl -X GET "https://YOUR_INVOKE_URL-api.REGION.amazonaws.com/dev/data" \
 7. ❌ **Negative Test:** Remove the Header and Send again. You should receive `{"message":"Unauthorized"}` with HTTP `401`.
 
 ![image](./img/s8.png)
+
+---
+
+[Proceed-to-Lab-2](../Lab%202:%20Cognito%20App%20Client%20Configuration%20&%20OAuth2%20Hosted%20UI/readme.md)
