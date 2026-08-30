@@ -1,3 +1,5 @@
+# Lab 2 : Redis Single Node cluster
+
 <aside>
 <img src="https://app.notion.com/icons/graduate_green.svg" alt="https://app.notion.com/icons/graduate_green.svg" width="40px" />
 
