@@ -33,6 +33,14 @@
 6. Click **Create group**.
 7. Repeat steps 2-6 to create a second group named `StandardUsers`.
 
+
+![image](./images/41a.png)
+
+![image](./images/41b.png)
+
+![image](./images/41c.png)
+
+![image](./images/41d.png)
 ---
 
 ## **Step 2: Assign Users to Groups**
@@ -42,6 +50,23 @@
 3. Scroll to **Group memberships** ➔ **Add user to group**.
 4. Select `StandardUsers` ➔ Click **Add to group**.
 5. *(Optional)* Create a new user `admin@example.com` (follow Lab 1, Step 7 CLI commands) and add them to the `Admins` group.
+
+
+![image](./images/42a.png)
+
+![image](./images/42b.png)
+
+![image](./images/42c.png)
+
+![image](./images/42d.png)
+
+![image](./images/42e.png)
+
+![image](./images/42f.png)
+
+![image](./images/42g.png)
+
+![image](./images/42h.png)
 
 ---
 
@@ -53,6 +78,9 @@
 [python_code_for_FIne_grainedAuth_REST_HTTP_Compatible](../Lab%204:Fine-Grained%20Authorization%20with%20Cognito%20Groups%20&%20Lambda/lambda_handler.py)
 
 2. Click Deploy.
+
+![image](./images/43a.png)
+
 
 ---
 
@@ -67,6 +95,17 @@
 ✅ **Expected:** `200 OK` with `"role": "Admin"` and full dataset including `secret_key`.
 5. Decode the JWT at jwt.io and verify the `cognito:groups` array contains the correct group name.
 
+![image](./images/44a.png)
+
+![image](./images/44b.png)
+
+![image](./images/44c.png)
+
+![image](./images/44d.png)
+
+![image](./images/44e.png)
+
+![image](./images/44f.png)
 
 
 ---
@@ -94,6 +133,7 @@ C) Use Cognito Custom Attributes to store the role string and validate it in API
 D) Issue separate App Clients for each role and use different API Gateway stages.
 
 *Correct Answer: B. Explanation: Cognito Groups are natively embedded in the JWT as the `cognito:groups` claim. This provides zero-latency authorization without additional database calls or custom authorizer overhead.*
+
 
 
 
