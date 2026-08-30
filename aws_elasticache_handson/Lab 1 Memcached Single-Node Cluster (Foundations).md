@@ -62,9 +62,11 @@
 
 💡 **WHY no NAT Gateway?** A NAT Gateway costs $0.045/hour ($32/month) **even when idle**. For these labs, EC2 will be in a public subnet and reach AWS services (S3, Secrets Manager) directly via IGW. If you need private S3 access later, use a **Gateway VPC Endpoint** (free).
 
-- Open/Close Screenshot **Create a VPC**
+- Screenshot 
+
+**Create a VPC**
     
-    ![image.png](Lab%201%20Memcached%20Single-Node%20Cluster%20(Foundations)/image.png)
+![image.png](Lab%201%20Memcached%20Single-Node%20Cluster%20(Foundations)/image.png)
     
 
 ---
@@ -102,12 +104,12 @@
 
 💡 **WHY reference SG instead of CIDR?** Security group references track the actual EC2 instances attached to that SG, even if their private IPs change. This is the canonical AWS pattern and is tested in SAA-C03.
 
-- Open/Close Screenshot **EC2 SG:**
+- Screenshot **EC2 SG:**
     
     ![image.png](Lab%201%20Memcached%20Single-Node%20Cluster%20(Foundations)/image%201.png)
     
 
-- Open/Close Screenshot **Memcached SG**
+- Screenshot **Memcached SG**
     
     ![image.png](Lab%201%20Memcached%20Single-Node%20Cluster%20(Foundations)/image%202.png)
     
@@ -143,7 +145,7 @@
 
 💡 **WHY user data?** Saves you from running install commands manually after SSH. This is a common SAA-C03 pattern — automation via user-data is the right answer for "how to bootstrap instances."
 
-- Open/Close Screenshot Launch Instance
+- Screenshot Launch Instance
     
     ![image.png](Lab%201%20Memcached%20Single-Node%20Cluster%20(Foundations)/image%203.png)
     
@@ -170,7 +172,7 @@ ssh -i ~/Downloads/elc-lab-key.pem ec2-user@<EC2_PUBLIC_IP>
 # Replace <EC2_PUBLIC_IP> with the value from EC2 console
 ```
 
-- Open/Close Screenshot  **SSH to**
+- Screenshot  **SSH to**
     
     ![image.png](Lab%201%20Memcached%20Single-Node%20Cluster%20(Foundations)/image%209.png)
     
@@ -192,7 +194,7 @@ ssh -i ~/Downloads/elc-lab-key.pem ec2-user@<EC2_PUBLIC_IP>
 
 ⚠️ **Common mistake:** choosing the public subnet. ElastiCache nodes are NEVER given public IPs — they must live in private subnets. The cluster will technically deploy but you'll have no way to reach it from outside the VPC (which is what you want for security).
 
-- Open/Close Screenshot  **ElastiCache Subnet Group**
+- Screenshot  **ElastiCache Subnet Group**
     
     ![image.png](Lab%201%20Memcached%20Single-Node%20Cluster%20(Foundations)/image%2010.png)
     
@@ -223,7 +225,7 @@ ssh -i ~/Downloads/elc-lab-key.pem ec2-user@<EC2_PUBLIC_IP>
 
 You'll be redirected to the cluster list. Status will be **`Creating`** for ~3–5 minutes, then **`Available`**.
 
-- Open/Close Screenshot **Create the Memcached Cluster**
+- Screenshot **Create the Memcached Cluster**
     
     ![image.png](Lab%201%20Memcached%20Single-Node%20Cluster%20(Foundations)/image%2012.png)
     
@@ -240,7 +242,7 @@ You'll be redirected to the cluster list. Status will be **`Creating`** for ~3�
 2. Under **Configuration endpoint**, copy the **Primary endpoint** address (looks like **`elc-lab-memcached.xxxxxx.cfg.use1.cache.amazonaws.com:11211`**).
 3. Note this endpoint — you'll use it from EC2.
 
-- Open/Close Screenshot  **Get the Configuration Endpoint**
+- Screenshot  **Get the Configuration Endpoint**
     
     ![image.png](Lab%201%20Memcached%20Single-Node%20Cluster%20(Foundations)/image%2015.png)
     
@@ -297,7 +299,7 @@ printf "stats\r\n" | timeout 2 openssl s_client -quiet -connect $Endpoint | grep
 - [ ]  **`get`** returns **`hello world`**.
 - [ ]  **`memcached-tool stats`** shows **`curr_items >= 1`**.
 
-- Open/Close Screenshot  **Connect from EC2 and Test**
+- Screenshot  **Connect from EC2 and Test**
     
     ![image.png](Lab%201%20Memcached%20Single-Node%20Cluster%20(Foundations)/image%2016.png)
     
@@ -368,7 +370,7 @@ printf "stats\r\n" | timeout 2 openssl s_client -quiet -connect $Endpoint | grep
     ```
     
 
-- Open/Close Screenshot **Test Eviction**
+- Screenshot **Test Eviction**
     
     ![image.png](Lab%201%20Memcached%20Single-Node%20Cluster%20(Foundations)/image%2021.png)
     
@@ -390,7 +392,7 @@ printf "stats\r\n" | timeout 2 openssl s_client -quiet -connect $Endpoint | grep
 4. **DO NOT delete** the VPC, subnet group, or security groups — we'll reuse them in Lab 2.
 5. **DO NOT delete** the EC2 instance — we'll reuse it in Lab 2.
 
-- Open/Close Screenshot **Cleanup — Lab 1**
+- Screenshot **Cleanup — Lab 1**
     
     ![image.png](Lab%201%20Memcached%20Single-Node%20Cluster%20(Foundations)/image%2024.png)
     
