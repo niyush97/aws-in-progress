@@ -168,6 +168,8 @@ D) Resource Owner Password Credentials (ROPC) grant.
 
 *Correct Answer: B. Explanation: SPAs cannot securely store client secrets. The Authorization Code Grant with PKCE is the industry standard and most secure method for public clients like SPAs and mobile apps.*
 
+---
+
 **Q4:** An application uses Cognito User Pools to generate JWTs. The backend API Gateway needs to ensure that the user has the specific permission `finance:read` before allowing access to the `/reports` endpoint. How can this be achieved with the LEAST operational overhead?
 A) Write a Lambda Authorizer to decode the JWT and check the custom claims.
 B) Use Cognito Identity Pools to map the user to an IAM role with `finance:read` policy.
