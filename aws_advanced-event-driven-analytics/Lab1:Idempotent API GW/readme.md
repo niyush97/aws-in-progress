@@ -103,3 +103,142 @@
 ![alt text](./img/i3.png)
 
 ---
+
+### **Step 3 — Create the Idempotent AWS Lambda Function**
+
+1. Console path: **Lambda → Functions → Create function**
+2. Choose **Author from scratch**.
+3. Basic information:
+    - Function name: **`PostOrderFunction`**
+    - Runtime: **Python 3.12**
+    - Architecture: **x86_64**
+    - Execution role: **Use an existing role** -> select `OrderLambdaRoleStrict`.
+4. Click **Create function**.
+5. Scroll down to the **Code source** editor. Replace the default code with the code in this file [PostOrderFunction](./PostOrderFunction.py)
+
+![image](./img/i4.png)
+
+![image](./img/i5.png)
+
+---
+### **Step 4 — Create API Gateway with Request Validation**
+
+Instead of letting Lambda parse JSON and fail (costing you money), we will configure API Gateway to reject anything that doesn't match our schema.
+
+1. Console path: **API Gateway → APIs → Create API** -> Choose **REST API** (Build).
+    - *Wait, why REST API instead of HTTP API?* Because HTTP APIs do not support native request validation. REST API costs $3.50/mo per 1M reqs, but for an enterprise API that validates payloads at the edge, it's worth it.
+2. Name: **`OrdersAPI`**. Endpoint Type: **Regional**. Click **Create API**.
+3. Click **Resources** -> **Create resource**. Path: **`orders`**. Click **Create resource**.
+4. Click **Method** -> Choose **POST**. Integration: **Lambda Function** -> **`PostOrderFunction`**. Click **Create method**.
+5. **The Spice (Validation):** Click on the **POST** method. Click the **Method request** tab.
+6. Under **Request validator**, click edit. Select **Validate body**.
+7. Under **Request body**, click edit. Add a model:
+    - Content type: **`application/json`**
+    - Model name: **`OrderModel`**
+    - Description: **`Validates order payload`**
+    - Schema (paste this JSON Schema):
+    - sample Schema
+        
+        ```json
+        {
+          "$schema": "http://json-schema.org/draft-04/schema#",
+          "title": "Order",
+          "type": "object",
+          "properties": {
+            "customerId": { "type": "string" },
+            "item": { "type": "string" }
+          },
+          "required": ["customerId", "item"]
+        }
+        ```
+        
+8. Save the model and the method request.
+9. Click **Deploy API**. Create a new Stage called **`prod`**. Deploy.
+10. Note the **Invoke URL** (e.g., **`https://abc123.execute-api.ap-northeast-1.amazonaws.com/prod`**).
+
+![image](./img/i6.png)
+
+![image](./img/i7.png)
+
+![image](./img/i8.png)
+
+![image](./img/i9.png)
+
+![image](./img/i10.png)
+
+![image](./img/i11.png)
+
+
+---
+
+### **Step 5 — Test the Spice (Idempotency & Validation)**
+
+Open your terminal and use **`curl`** to send a POST request to the API URL.
+
+![img](./img/apiURLalias.png)
+
+#### **Test 1: Missing Payload (Should be rejected by API Gateway)**
+
+```bash
+# Replace the URL with your API Gateway Invoke URL
+export API_URL="https://abc123.execute-api.ap-northeast-1.amazonaws.com/prod/orders"
+
+curl -s -X POST $API_URL \
+  -H "Content-Type: application/json" \
+  -H "Idempotency-Key: key-001" \
+  -d '{"customerId": "cust_001"}' 
+ 
+ # Expected Output: {"message": "Invalid request body"}
+```
+
+![img](./img/t1.png)
+
+---
+
+#### **Test 2: Valid First Request (Should succeed)**
+
+```bash
+curl -s -X POST $API_URL \
+  -H "Content-Type: application/json" \
+  -H "Idempotency-Key: key-001" \
+  -d '{"customerId": "cust_001", "item": "MacBook Pro"}' 
+
+# Expected Output: {"message": "Order placed", "orderId": "1234-..."}
+```
+![img](./img/t2.png)
+
+---
+
+#### **Test 3: Duplicate Request (Should be ignored by DynamoDB Conditional Write)**
+
+```bash
+curl -s -X POST $API_URL \
+  -H "Content-Type: application/json" \
+  -H "Idempotency-Key: key-001" \
+  -d '{"customerId": "cust_001", "item": "MacBook Pro"}' 
+ 
+ # Expected Output: {"message": "Duplicate request ignored. Order already processed."}
+ # Go to the DynamoDB console. You will see only one item in your table, despite two valid requests being sent. You just built a production-grade, fault-tolerant API.
+```
+
+![img](./img/t3.png)
+
+---
+
+
+## Why This Architecture Wins
+1. **Idempotency**: Network requests fail. Users double-click. By using **`ConditionExpression='attribute_not_exists(idempotencyKey)'`**, DynamoDB atomically guarantees that a duplicate request never overwrites or creates a second order. This is how Stripe and PayPal handle payments.
+2. **API Gateway Validation**: By rejecting malformed JSON at the edge, API Gateway returns a 400 error in 2ms. Lambda is never invoked. You pay $0 for compute. If you did this in Lambda, you'd pay for the Lambda execution time to parse the JSON and fail.
+3. **Single-Table Design**: By using **`PK`** and **`SK`** instead of **`customerId`** and **`orderId`**, we can later add a GSI with **`PK=item`** to query all orders for a specific item without creating a new table.
+4. **Strict IAM**: If an attacker finds a way to exploit your Lambda, they can only *add* garbage data. They cannot read your customer database or delete the table.
+
+---
+
+#### **Key Concepts (SAA-C03 Memorize)**
+
+- 🎯 **Idempotency**: The ability to process the same request multiple times without changing the final state. Use DynamoDB conditional writes to implement it.
+- 🎯 **Conditional Writes**: **`ConditionExpression`** is the DynamoDB way to do Optimistic Concurrency Control. It prevents lost updates in concurrent environments.
+- 🎯 **API Gateway Validation**: REST APIs support JSON Schema validation; HTTP APIs do not. If the exam asks how to reject bad payloads before hitting Lambda, use REST API with Request Validator.
+- 🎯 **Single-Table Design**: Using generic **`PK`**/**`SK`** attributes. Allows for sparse indexes, overloading, and highly efficient queries.
+
+---
